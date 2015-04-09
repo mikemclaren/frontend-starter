@@ -20,7 +20,7 @@ Build files are the exact same names as dev built files.
 ## Features
 - HTML5 (obviously)
 - Support for IE8+
-- [Modernizr](https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js)
+- Modernizr
 - [Bower](http://bower.io)
 - Grunt (Development)
   - Connect (local server)
