@@ -20,8 +20,8 @@ Build files are the exact same names as dev built files.
 ## Features
 - HTML5 (obviously)
 - Support for IE8+
-- Modernizr
-- Bower
+- [Modernizr](https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js)
+- [Bower](http://bower.io)
 - Grunt (Development)
   - Connect (local server)
   - Sass watching/compilation
@@ -39,7 +39,9 @@ Build files are the exact same names as dev built files.
 list of recommended libraries that you may need to install through
 [Bower](http://bower.io) or implement through a CDN.
 
+- [Bourbon](http://bourbon.io/) `bower install bourbon`
 - [Susy](http://susy.oddbird.net/) `bower install susy`
+- [Neat](http://neat.bourbon.io/) `bower install neat`
 - [Bootstrap](http://getbootstrap.com/getting-started/) `bower install bootstrap`
 - [Foundation](http://foundation.zurb.com/) `bower install foundation`
 - [FontAwesome](http://fortawesome.github.io/Font-Awesome/icons/) `bower install fontawesome`
