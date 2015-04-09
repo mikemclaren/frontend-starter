@@ -63,14 +63,34 @@ module.exports = function(grunt) {
 
 		// Uglify - https://github.com/gruntjs/grunt-contrib-uglify
 		uglify: {
-			options: {
-				compress: {
-					'drop_console': true
-				}
-			},
 			target: {
+				options: {
+					compress: {
+						'drop_console': true
+					}
+				},
 				files: {
 					'public/main.js': [ 'public/main.js' ]
+				}
+			},
+			bower: {
+				options: {
+					compress: {
+						mangle: true,
+						compress: true
+					},
+					files: {
+						'public/libraries.js': 'public/libraries.js'
+					}
+				}
+			}
+		},
+
+		// CSSMin - https://github.com/gruntjs/grunt-contrib-cssmin
+		cssmin: {
+			target: {
+				files: {
+					'libraries.css': 'libraries.css'
 				}
 			}
 		},
@@ -91,6 +111,7 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.registerTask('bower', [ 'uglify:bower', 'cssmin' ]);
 	grunt.registerTask('default', ['connect', 'watch']);
 	grunt.registerTask('build', ['eslint', 'concat', 'uglify:target', 'sass:build']);
 };
