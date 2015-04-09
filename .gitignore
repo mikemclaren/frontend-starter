@@ -1,8 +1,12 @@
 node_modules
-build
 npm-debug.log
 .capistrano
 bower_components
+public/*.js
+public/*.css
+public/*.png
+public/*.jpg
+public/*.gif
 
 .sass-cache
 *.css.map

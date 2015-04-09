@@ -108,6 +108,18 @@ module.exports = function(grunt) {
 				files: [ 'stylesheets/*.scss', 'stylesheets/**/*.scss' ],
 				tasks: [ 'sass:watch' ]
 			}
+		},
+
+		// Imagemin - https://github.com/gruntjs/grunt-contrib-imagemin
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'images/',
+					src: [ '*.{png,jpg,gif}', '**/*.{png,jpg,gif}' ],
+					dest: 'public/images'
+				}]
+			}
 		}
 	});
 
