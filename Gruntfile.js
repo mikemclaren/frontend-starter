@@ -40,6 +40,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Bower concat - https://github.com/sapegin/grunt-bower-concat
+		'bower_concat': {
+			all: {
+				dest: 'public/libraries.js',
+				cssDest: 'public/libraries.css'
+			}
+		},
+
 		// Grunt concat - https://github.com/gruntjs/grunt-contrib-concat
 		concat: {
 			options: {
@@ -70,7 +78,10 @@ module.exports = function(grunt) {
 		// Watch - https://github.com/gruntjs/grunt-contrib-watch
 		watch: {
 			scripts: {
-				files: [ 'javascript/*.js', 'javascript/**/*.js' ],
+				files: [
+					'javascript/*.js',
+					'javascript/**/*.js'
+				],
 				tasks: [ 'eslint', 'concat' ]
 			},
 			css: {

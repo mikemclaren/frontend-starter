@@ -2,6 +2,7 @@ node_modules
 build
 npm-debug.log
 .capistrano
+bower_components
 
 .sass-cache
 *.css.map

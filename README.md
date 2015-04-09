@@ -76,9 +76,8 @@ list of recommended libraries that you may need to install through
 
 ## Standards
 All standards are meant to enhance clarity and improve code maintainability.
-Refer to our [styleguides](linktostyleguides) for more.
+Refer to our [styleguides](https://github.com/sq1agency/guides/tree/master/style) for more.
 
 ### Important Styleguides
-- [Html]
-- [Scss]
-- [Javascript]
+- [SCSS](https://github.com/sq1agency/guides/blob/master/style/Sass.md)
+- [Javascript](https://github.com/sq1agency/guides/blob/master/style/Javascript.md)
