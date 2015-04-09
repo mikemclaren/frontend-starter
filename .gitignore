@@ -7,6 +7,7 @@ public/*.css
 public/*.png
 public/*.jpg
 public/*.gif
+Gemfile.lock
 
 .sass-cache
 *.css.map

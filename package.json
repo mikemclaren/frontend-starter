@@ -28,6 +28,7 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-eslint": "^10.0.0",
+    "grunt-scss-lint": "^0.3.6",
     "load-grunt-tasks": "^3.1.0"
   }
 }

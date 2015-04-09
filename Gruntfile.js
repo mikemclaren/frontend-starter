@@ -1,12 +1,12 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function gruntLoader(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		// Grunt ESLint - https://github.com/sindresorhus/grunt-eslint
 		eslint: {
-			target: ['*.js', 'javascript/*.js', 'javascript/**/*.js']
+			target: [ '*.js', 'javascript/*.js', 'javascript/**/*.js' ]
 		},
 
 		// Grunt Connect - https://github.com/gruntjs/grunt-contrib-connect
@@ -106,24 +106,36 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: [ 'stylesheets/*.scss', 'stylesheets/**/*.scss' ],
-				tasks: [ 'sass:watch' ]
+				tasks: [ 'scsslint', 'sass:watch' ]
 			}
 		},
 
 		// Imagemin - https://github.com/gruntjs/grunt-contrib-imagemin
 		imagemin: {
 			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'images/',
-					src: [ '*.{png,jpg,gif}', '**/*.{png,jpg,gif}' ],
-					dest: 'public/images'
-				}]
+				files: [
+					{
+						expand: true,
+						cwd: 'images/',
+						src: [ '*.{png,jpg,gif}', '**/*.{png,jpg,gif}' ],
+						dest: 'public/images'
+					}
+				]
+			}
+		},
+
+		// SCSS - https://github.com/ahmednuaman/grunt-scss-lint
+		scsslint: {
+			allFiles: [ 'stylesheets/*.scss', 'stylesheets/**/*.scss' ],
+			options: {
+				bundleExec: true,
+				config: '.scss-lint.yml',
+				colorizeOutput: true
 			}
 		}
 	});
 
 	grunt.registerTask('bower', [ 'uglify:bower', 'cssmin' ]);
-	grunt.registerTask('default', ['connect', 'watch']);
-	grunt.registerTask('build', ['eslint', 'concat', 'uglify:target', 'sass:build']);
+	grunt.registerTask('default', [ 'connect', 'watch' ]);
+	grunt.registerTask('build', [ 'eslint', 'scsslint', 'concat', 'uglify:target', 'sass:build' ]);
 };
