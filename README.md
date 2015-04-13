@@ -25,10 +25,7 @@ Build files are the exact same names as dev built files.
 - Grunt (Development)
   - Connect (local server)
   - Sass watching/compilation
-  - [ESLint](http://eslint.org/)
-- Grunt (Performance)
-  - [Performance budget testing](https://github.com/tkadlec/grunt-perfbudget)
-- Grunt (Build)
+  - [ESLint](http://eslint.org/)- Grunt (Build)
   - Sass compilation
   - CSS minification
   - Image minification
