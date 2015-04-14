@@ -75,22 +75,24 @@ module.exports = function gruntLoader(grunt) {
 			},
 			bower: {
 				options: {
-					compress: {
-						mangle: true,
-						compress: true
-					},
-					files: {
-						'public/libraries.js': 'public/libraries.js'
-					}
+					mangle: true,
+					compress: true
+				},
+				files: {
+					'public/libraries.js': 'public/libraries.js'
 				}
 			}
 		},
 
 		// CSSMin - https://github.com/gruntjs/grunt-contrib-cssmin
 		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1
+			},
 			target: {
 				files: {
-					'libraries.css': 'libraries.css'
+					'public/libraries.css': [ 'public/libraries.css' ]
 				}
 			}
 		},
@@ -102,11 +104,11 @@ module.exports = function gruntLoader(grunt) {
 					'javascript/*.js',
 					'javascript/**/*.js'
 				],
-				tasks: [ 'eslint', 'concat' ]
+				tasks: [ 'concat' ]
 			},
 			css: {
 				files: [ 'stylesheets/*.scss', 'stylesheets/**/*.scss' ],
-				tasks: [ 'scsslint', 'sass:watch' ]
+				tasks: [ 'sass:watch' ]
 			}
 		},
 
@@ -135,7 +137,16 @@ module.exports = function gruntLoader(grunt) {
 		}
 	});
 
-	grunt.registerTask('bower', [ 'uglify:bower', 'cssmin' ]);
+	grunt.registerTask('bower', [ 'bower_concat:all', 'uglify:bower', 'cssmin:target' ]);
 	grunt.registerTask('default', [ 'connect', 'watch' ]);
-	grunt.registerTask('build', [ 'eslint', 'scsslint', 'concat', 'uglify:target', 'sass:build' ]);
+	grunt.registerTask('build', [
+		'bower_concat:all',
+		'eslint',
+		'scsslint',
+		'concat',
+		'uglify:target',
+		'uglify:bower',
+		'sass:build',
+		'cssmin:target'
+	]);
 };

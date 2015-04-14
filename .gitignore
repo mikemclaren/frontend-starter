@@ -7,6 +7,10 @@ public/*.css
 public/*.png
 public/*.jpg
 public/*.gif
+public/images/*.png
+public/images/*.gif
+public/images/*.jpg
+
 Gemfile.lock
 
 .sass-cache
