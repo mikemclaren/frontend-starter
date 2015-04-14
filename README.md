@@ -5,6 +5,8 @@ of our starter kits.
 
 Feel free to open a pull-request if you have an idea or improvement!
 
+To view an example, check out the `examples` branch!
+
 ## Usage
 ```
 ./bin/bootstrap
@@ -25,7 +27,8 @@ Build files are the exact same names as dev built files.
 - Grunt (Development)
   - Connect (local server)
   - Sass watching/compilation
-  - [ESLint](http://eslint.org/)- Grunt (Build)
+  - [ESLint](http://eslint.org/)
+- Grunt (Build)
   - Sass compilation
   - CSS minification
   - Image minification
