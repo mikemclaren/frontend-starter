@@ -5,6 +5,8 @@ of our starter kits.
 
 Feel free to open a pull-request if you have an idea or improvement!
 
+To view an example, check out the `examples` branch!
+
 ## Usage
 ```
 ./bin/bootstrap
@@ -37,8 +39,8 @@ list of recommended libraries that you may need to install through
 [Bower](http://bower.io) or implement through a CDN.
 
 - [Bourbon](http://bourbon.io/) `bower install bourbon`
-- [Susy](http://susy.oddbird.net/) `bower install susy`
 - [Neat](http://neat.bourbon.io/) `bower install neat`
+- [Susy](http://susy.oddbird.net/) `bower install susy`
 - [Bootstrap](http://getbootstrap.com/getting-started/) `bower install bootstrap`
 - [Foundation](http://foundation.zurb.com/) `bower install foundation`
 - [FontAwesome](http://fortawesome.github.io/Font-Awesome/icons/) `bower install fontawesome`

@@ -135,7 +135,7 @@ module.exports = function gruntLoader(grunt) {
 		}
 	});
 
-	grunt.registerTask('bower', [ 'uglify:bower', 'cssmin' ]);
+	grunt.registerTask('bower', [ 'bower_concat:all', 'uglify:bower', 'cssmin' ]);
 	grunt.registerTask('default', [ 'connect', 'watch' ]);
 	grunt.registerTask('build', [ 'eslint', 'scsslint', 'concat', 'uglify:target', 'sass:build' ]);
 };
