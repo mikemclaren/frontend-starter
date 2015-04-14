@@ -36,6 +36,7 @@
 		"space-in-brackets": [1, "always", {
 			"propertyName": false
 		}],
-		"spaced-line-comment": [1, "always"]
+		"spaced-line-comment": [1, "always"],
+		"max-len": [1, 80]
 	}
 }

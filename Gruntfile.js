@@ -102,11 +102,11 @@ module.exports = function gruntLoader(grunt) {
 					'javascript/*.js',
 					'javascript/**/*.js'
 				],
-				tasks: [ 'eslint', 'concat' ]
+				tasks: [ 'concat' ]
 			},
 			css: {
 				files: [ 'stylesheets/*.scss', 'stylesheets/**/*.scss' ],
-				tasks: [ 'scsslint', 'sass:watch' ]
+				tasks: [ 'sass:watch' ]
 			}
 		},
 
@@ -137,5 +137,14 @@ module.exports = function gruntLoader(grunt) {
 
 	grunt.registerTask('bower', [ 'bower_concat:all', 'uglify:bower', 'cssmin' ]);
 	grunt.registerTask('default', [ 'connect', 'watch' ]);
-	grunt.registerTask('build', [ 'eslint', 'scsslint', 'concat', 'uglify:target', 'sass:build' ]);
+	grunt.registerTask('build', [
+		'bower_concat:all',
+		'eslint',
+		'scsslint',
+		'concat',
+		'uglify:target',
+		'uglify:bower',
+		'sass:build',
+		'cssmin'
+	]);
 };
